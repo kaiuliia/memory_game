@@ -1,6 +1,7 @@
 import React from 'react';
 import { CardRow } from './cardRow/cardRow';
-// Add import statements below
+import {useSelector} from 'react-redux';
+import { selectBoard } from './boardSlice';
 
 
 
