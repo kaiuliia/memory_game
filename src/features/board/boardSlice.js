@@ -102,4 +102,5 @@ export const resetCards = (indices) => {
 };
 
 export const selectBoard = (state) =>
-  state.board.map((card) => ({ id: card.id, contents: card.contents }));
+  {
+    return state.board.map((card) => ({ id: card.id, contents: card.contents }));}
