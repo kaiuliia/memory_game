@@ -12,7 +12,7 @@ const currentBoard = useSelector(selectBoard);
 
 
 
- const numberOfCards = 0;
+ const numberOfCards = currentBoard.length;
  const columns = 3;
  const rows = Math.floor(numberOfCards / columns);
 
@@ -22,7 +22,7 @@ const currentBoard = useSelector(selectBoard);
    for (let j = 0; j < columns; j++) {
      const cardIndex = row * columns + j;
      // Implement selected data below
-     rowCards.push({});
+     rowCards.push(currentBoard[cardIndex]);
    }
    return rowCards;
  };
