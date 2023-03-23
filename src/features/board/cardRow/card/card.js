@@ -19,12 +19,12 @@ const visibleId = useSelector(selectVisibleIds)
     <img src={cardLogo} className="logo-placeholder" alt="Card option" />
   );
 
-  // 1st if statement
-  // implement card id array membership check
-  if (false) {
+
+  if (visibleId.includes(id)) {
     cardText = contents;
     click = () => {};
   }
+
 
   // 2nd if statement
   // implement card id array membership check
