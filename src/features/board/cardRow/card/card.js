@@ -28,14 +28,14 @@ const dispatch = useDispatch();
 
 
   // 2nd if statement
-  // implement card id array membership check
+
   if (false) {
     cardStyle = "matched";
   }
 
   // 3rd if statement
-  // implement number of flipped cards check
-  if (false) {
+
+  if (visibleId.length===2) {
     click = () => {};
   }
 

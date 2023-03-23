@@ -101,10 +101,14 @@ export const resetCards = (indices) => {
   };
 };
 
-export const selectBoard = (state) =>
-  {
-    return state.board.map((card) => ({ id: card.id, contents: card.contents }));}
+export const selectBoard = (state) => {
+  return state.board.map((card) => ({ id: card.id, contents: card.contents }));
+};
 
-export const selectVisibleIds =(state)=> {
-    return state.board.filter(card=>card.visible).map(card=>card.id);
-}
+export const selectVisibleIds = (state) => {
+  return state.board.filter((card) => card.visible).map((card) => card.id);
+};
+
+export const selectMatchId = () => {
+  return state.board.filter((card) => card.matched).map((card) => card.id);
+};
