@@ -1,16 +1,16 @@
 const initialState = [
-  { id: 0, contents: "Provider", visible: true, matched: false },
-  { id: 1, contents: "Provider", visible: true, matched: false },
-  { id: 2, contents: "selector", visible: true, matched: false },
-  { id: 3, contents: "selector", visible: true, matched: false },
-  { id: 4, contents: "useSelector()", visible: true, matched: false },
-  { id: 5, contents: "useSelector()", visible: true, matched: false },
-  { id: 6, contents: "useDispatch()", visible: true, matched: false },
-  { id: 7, contents: "useDispatch()", visible: true, matched: false },
-  { id: 8, contents: "Pure Function", visible: true, matched: false },
-  { id: 9, contents: "Pure Function", visible: true, matched: false },
-  { id: 10, contents: "react-redux", visible: true, matched: false },
-  { id: 11, contents: "react-redux", visible: true, matched: false },
+  { id: 0, contents: "Amsterdam", visible: true, matched: false },
+  { id: 1, contents: "Amsterdam", visible: true, matched: false },
+  { id: 2, contents: "Paris", visible: true, matched: false },
+  { id: 3, contents: "Paris", visible: true, matched: false },
+  { id: 4, contents: "New York", visible: true, matched: false },
+  { id: 5, contents: "New York", visible: true, matched: false },
+  { id: 6, contents: "London", visible: true, matched: false },
+  { id: 7, contents: "London", visible: true, matched: false },
+  { id: 8, contents: "Berlin", visible: true, matched: false },
+  { id: 9, contents: "Berlin", visible: true, matched: false },
+  { id: 10, contents: "Tokio", visible: true, matched: false },
+  { id: 11, contents: "Tokio", visible: true, matched: false },
 ];
 
 export const boardReducer = (state = initialState, action) => {
@@ -52,18 +52,18 @@ export const boardReducer = (state = initialState, action) => {
 };
 
 const wordPairs = [
-  "Provider",
-  "Provider",
-  "selector",
-  "selector",
-  "useSelector()",
-  "useSelector()",
-  "useDispatch()",
-  "useDispatch()",
-  "Pure Function",
-  "Pure Function",
-  "react-redux",
-  "react-redux",
+  "Amsterdam",
+  "Amsterdam",
+  "Paris",
+  "Paris",
+  "New York",
+  "New York",
+  "London",
+  "London",
+  "Berlin",
+  "Berlin",
+  "Tokio",
+  "Tokio",
 ];
 
 const randomWords = () => {
