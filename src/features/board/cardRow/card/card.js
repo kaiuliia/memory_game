@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectVisibleIds } from '../../boardSlice'
+import { useSelector, useDispatch } from "react-redux";
+import { selectVisibleIds, flipCard } from '../../boardSlice';
+
 
 let cardLogo =
   "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
