@@ -22,10 +22,12 @@ export const Card = ({ id, contents }) => {
   if (visibleId.includes(id)) {
     cardText = contents;
     click = () => {};
+    
   }
 
   if (matchedId.includes(id) || visibleId.includes(id)) {
     cardStyle = "matched";
+    
   }
 
   if (visibleId.length === 2) {

@@ -14,7 +14,7 @@ export const Board = () => {
     const rowCards = [];
     for (let j = 0; j < columns; j++) {
       const cardIndex = row * columns + j;
-      // Implement selected data below
+    
       rowCards.push(currentBoard[cardIndex]);
     }
     return rowCards;

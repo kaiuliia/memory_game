@@ -38,8 +38,8 @@ export const boardReducer = (state = initialState, action) => {
         const card1 = flipState[index1];
         const card2 = flipState[index2];
         if (card1.contents === card2.contents) {
-          flipState[index1] = { ...card1, visible: false, matched: true };
-          flipState[index2] = { ...card2, visible: false, matched: true };
+          flipState[index1] = { ...card1, visible: true, matched: true };
+          flipState[index2] = { ...card2, visible: true, matched: true };
         }
       }
 
