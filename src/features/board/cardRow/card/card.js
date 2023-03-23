@@ -9,9 +9,9 @@ let cardLogo =
 export const Card = ({ id, contents }) => {
 const visibleId = useSelector(selectVisibleIds)
 
-  // flip card action
+const dispatch = useDispatch();
   const flipHandler = (id) => {
-    // Add action dispatch below
+ dispatch(flipCard(id))
   };
 
   let cardStyle = "resting";
