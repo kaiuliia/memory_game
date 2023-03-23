@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import {selectVisibleIds} from ''
+import { selectVisibleIds } from '../../boardSlice'
 
 let cardLogo =
   "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
 
 export const Card = ({ id, contents }) => {
-  // Add selected data and dispatch variables below
+const visibleId = useSelector(selectVisibleIds)
 
   // flip card action
   const flipHandler = (id) => {
