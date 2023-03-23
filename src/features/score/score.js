@@ -1,11 +1,13 @@
 import React from "react";
-// Add import statement below
+import {useSelector} from 'react-redux';
+import { selectMatchId } from "../board/boardSlice";
+
 
 export const Score = () => {
-  // Add selected data variable below
+const cardsMatched = useSelector(selectMatchId)
 
   return (
-    // implement selected data inside <div>
-    <div className="score-container">Matched: 0</div>
+    
+    <div className="score-container">Matched: {cardsMatched.length}</div>
   );
 };
