@@ -64,7 +64,7 @@ body {
 }
 
 .footer > button {
-  width: 50%;
+  width: 20%;
   padding: 19px 40px 19px 40px;
   font-size: 20px;
   border: none;
@@ -73,7 +73,9 @@ body {
 }
 
 .start-button {
-  background-color: #141c3a;
+  background-color: #23164e;
+  border-radius: 6px;
+  
 }
 
 .start-button:hover,
