@@ -109,6 +109,13 @@ export const selectVisibleIds = (state) => {
   return state.board.filter((card) => card.visible).map((card) => card.id);
 };
 
+
+//returns array of matched cards
 export const selectMatchId = (state) => {
   return state.board.filter((card) => card.matched).map((card) => card.id);
+   
 };
+
+// export const showMatchId = (state) => {
+//   return state.board.filter((card) => card.matched).map((card) => card.id);
+// };

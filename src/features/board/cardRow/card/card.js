@@ -1,6 +1,11 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectVisibleIds, flipCard, selectMatchId,resetCards } from "../../boardSlice";
+import {
+  selectVisibleIds,
+  flipCard,
+  selectMatchId,
+  resetCards,
+} from "../../boardSlice";
 
 let cardLogo =
   "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
@@ -22,22 +27,20 @@ export const Card = ({ id, contents }) => {
   if (visibleId.includes(id)) {
     cardText = contents;
     click = () => {};
-    
   }
 
   if (matchedId.includes(id) || visibleId.includes(id)) {
-
     cardStyle = "matched";
-        
-
+    // useSelector(selectMatchId());
+  // selectMatchId
+   
   }
 
   if (visibleId.length === 2) {
-setTimeout(() => {
-dispatch(resetCards());
-}, "1000");
+    setTimeout(() => {
+      dispatch(resetCards());
+    }, "1000");
 
-     
     // click = () => {};
   }
 
