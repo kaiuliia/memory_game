@@ -12,9 +12,9 @@ const App = () => {
     dispatch(setBoard());
   };
 
-  const tryAgainHandler = () => {
-    dispatch(resetCards());
-  };
+  // const tryAgainHandler = () => {
+  //   dispatch(resetCards());
+  // };
 
   return (
     <div className="App">
@@ -24,9 +24,9 @@ const App = () => {
         <button onClick={startGameHandler} className="start-button">
           Start Game
         </button>
-        <button onClick={tryAgainHandler} className="try-new-pair-button">
+        {/* <button onClick={tryAgainHandler} className="try-new-pair-button">
           Try New Pair
-        </button>
+        </button> */}
       </footer>
     </div>
   );
