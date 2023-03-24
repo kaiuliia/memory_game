@@ -29,7 +29,7 @@ export const boardReducer = (state = initialState, action) => {
     case "board/flipCard":
       let flipState = [...state];
       const cardID = action.payload;
-      flipState[cardID] = { ...state[cardID], visible: true };
+      flipState[cardID] = { ...state[cardID], visible: true};
 
       const [index1, index2] = flipState
         .filter((card) => card.visible)
@@ -40,10 +40,12 @@ export const boardReducer = (state = initialState, action) => {
         if (card1.contents === card2.contents) {
           flipState[index1] = { ...card1, visible: true, matched: true };
           flipState[index2] = { ...card2, visible: true, matched: true };
+      
         }
+       
       }
-
-      return flipState;
+  return flipState;
+     
     case "board/resetCards":
       return state.map((card) => ({ ...card, visible: false }));
     default:
@@ -116,6 +118,6 @@ export const selectMatchId = (state) => {
    
 };
 
-// export const showMatchId = (state) => {
-//   return state.board.filter((card) => card.matched).map((card) => card.id);
-// };
+export const showMatchId = (state) => {
+  return state.board.filter((card) => card.matched).map((card) => ({ ...card, visible: true}));
+};

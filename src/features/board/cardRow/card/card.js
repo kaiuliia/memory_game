@@ -5,10 +5,13 @@ import {
   flipCard,
   selectMatchId,
   resetCards,
+  showMatchId
 } from "../../boardSlice";
 
-let cardLogo =
-  "https://static-assets.codecademy.com/Courses/Learn-Redux/matching-game/codecademy_logo.png";
+
+
+
+ 
 
 export const Card = ({ id, contents }) => {
   const visibleId = useSelector(selectVisibleIds);
@@ -20,22 +23,20 @@ export const Card = ({ id, contents }) => {
 
   let cardStyle = "resting";
   let click = () => flipHandler(id);
-  let cardText = (
-    <img src={cardLogo} className="logo-placeholder" alt="Card option" />
-  );
+  let cardText = '';
 
   if (visibleId.includes(id)) {
     cardText = contents;
     click = () => {};
   }
 
-  if (matchedId.includes(id) || visibleId.includes(id)) {
-    cardStyle = "matched";
-    // useSelector(selectMatchId());
-  // selectMatchId
+  if (matchedId.includes(id)) {
+    cardStyle = "matched"; 
    
   }
-
+//  if (matchedId.length>2) {
+// dispatch(showMatchId())
+//  }
   if (visibleId.length === 2) {
     setTimeout(() => {
       dispatch(resetCards());
@@ -43,6 +44,7 @@ export const Card = ({ id, contents }) => {
 
     // click = () => {};
   }
+  
 
   return (
     <button onClick={click} className={`card ${cardStyle}`}>
