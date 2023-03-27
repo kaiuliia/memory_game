@@ -15,6 +15,8 @@ const initialState =  [
     { id: 11, contents: "Tokio", visible: true, matched: false },
   ];
 
+  const wonState = false;
+
 export const boardReducer = (state = initialState, action) => {
   switch (action.type) {
     case "board/setBoard":
@@ -55,9 +57,14 @@ export const boardReducer = (state = initialState, action) => {
   }
 };
 
-// export const wonReducer = (state = initialState, action) => {
-
+// export const wonReducer = (state = wonState, action) => {
+// switch (action.type) {
+//   case "game/showBoard":
+//     return 
+//     ;
 // }
+// }
+
 const wordPairs = [
   "Amsterdam",
   "Amsterdam",
