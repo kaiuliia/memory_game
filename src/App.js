@@ -2,7 +2,7 @@ import "./App.css";
 import React from "react";
 import { Score } from "./features/score/score";
 import { Board } from "./features/board/board";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setBoard, resetCards } from "./features/board/boardSlice";
 
 const App = () => {
@@ -16,7 +16,11 @@ const App = () => {
   //   dispatch(resetCards());
   // };
 
+  
+// if (initialState.win === false) { return everything below
+// } else {render pharase "youve win"}
   return (
+
     <div className="App">
       <Score />
       <Board />

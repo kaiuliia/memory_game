@@ -1,22 +1,6 @@
-// const initialState = {
-//   won: false,
-//   board: [
-//     { id: 0, contents: "Amsterdam", visible: true, matched: false },
-//     { id: 1, contents: "Amsterdam", visible: true, matched: false },
-//     { id: 2, contents: "Paris", visible: true, matched: false },
-//     { id: 3, contents: "Paris", visible: true, matched: false },
-//     { id: 4, contents: "New York", visible: true, matched: false },
-//     { id: 5, contents: "New York", visible: true, matched: false },
-//     { id: 6, contents: "London", visible: true, matched: false },
-//     { id: 7, contents: "London", visible: true, matched: false },
-//     { id: 8, contents: "Berlin", visible: true, matched: false },
-//     { id: 9, contents: "Berlin", visible: true, matched: false },
-//     { id: 10, contents: "Tokio", visible: true, matched: false },
-//     { id: 11, contents: "Tokio", visible: true, matched: false },
-//   ],
-// };
-
-const initialState =  [
+const initialState = {
+  won: false,
+  board: [
     { id: 0, contents: "Amsterdam", visible: true, matched: false },
     { id: 1, contents: "Amsterdam", visible: true, matched: false },
     { id: 2, contents: "Paris", visible: true, matched: false },
@@ -29,7 +13,9 @@ const initialState =  [
     { id: 9, contents: "Berlin", visible: true, matched: false },
     { id: 10, contents: "Tokio", visible: true, matched: false },
     { id: 11, contents: "Tokio", visible: true, matched: false },
-  ];
+  ],
+};
+
 
 export const boardReducer = (state = initialState, action) => {
   switch (action.type) {
