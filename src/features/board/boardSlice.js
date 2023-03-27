@@ -20,9 +20,9 @@ const initialState = {
 export const boardReducer = (state = initialState, action) => {
   switch (action.type) {
     case "board/setBoard":
-      let setState = [];
+      let setState = {won:false, board:[]};
       action.payload.forEach((element, index) =>
-        setState.push({
+        setState.board.push({
           id: index,
           contents: element,
           visible: false,
