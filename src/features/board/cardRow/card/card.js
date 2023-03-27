@@ -5,13 +5,8 @@ import {
   flipCard,
   selectMatchId,
   resetCards,
-  showMatchId
+  showMatchId,
 } from "../../boardSlice";
-
-
-
-
- 
 
 export const Card = ({ id, contents }) => {
   const visibleId = useSelector(selectVisibleIds);
@@ -23,7 +18,7 @@ export const Card = ({ id, contents }) => {
 
   let cardStyle = "resting";
   let click = () => flipHandler(id);
-  let cardText = '';
+  let cardText = "";
 
   if (visibleId.includes(id)) {
     cardText = contents;
@@ -31,12 +26,13 @@ export const Card = ({ id, contents }) => {
   }
 
   if (matchedId.includes(id)) {
-    cardStyle = "matched"; 
-   
+    cardStyle = "matched";
+    cardText = contents;
+    click = () => {};
   }
-//  if (matchedId.length>2) {
-// dispatch(showMatchId())
-//  }
+  //  if (matchedId.length>2) {
+  // dispatch(showMatchId())
+  //  }
   if (visibleId.length === 2) {
     setTimeout(() => {
       dispatch(resetCards());
@@ -44,7 +40,6 @@ export const Card = ({ id, contents }) => {
 
     // click = () => {};
   }
-  
 
   return (
     <button onClick={click} className={`card ${cardStyle}`}>

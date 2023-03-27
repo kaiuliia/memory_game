@@ -1,17 +1,35 @@
-const initialState = [
-  { id: 0, contents: "Amsterdam", visible: true, matched: false },
-  { id: 1, contents: "Amsterdam", visible: true, matched: false },
-  { id: 2, contents: "Paris", visible: true, matched: false },
-  { id: 3, contents: "Paris", visible: true, matched: false },
-  { id: 4, contents: "New York", visible: true, matched: false },
-  { id: 5, contents: "New York", visible: true, matched: false },
-  { id: 6, contents: "London", visible: true, matched: false },
-  { id: 7, contents: "London", visible: true, matched: false },
-  { id: 8, contents: "Berlin", visible: true, matched: false },
-  { id: 9, contents: "Berlin", visible: true, matched: false },
-  { id: 10, contents: "Tokio", visible: true, matched: false },
-  { id: 11, contents: "Tokio", visible: true, matched: false },
-];
+// const initialState = {
+//   won: false,
+//   board: [
+//     { id: 0, contents: "Amsterdam", visible: true, matched: false },
+//     { id: 1, contents: "Amsterdam", visible: true, matched: false },
+//     { id: 2, contents: "Paris", visible: true, matched: false },
+//     { id: 3, contents: "Paris", visible: true, matched: false },
+//     { id: 4, contents: "New York", visible: true, matched: false },
+//     { id: 5, contents: "New York", visible: true, matched: false },
+//     { id: 6, contents: "London", visible: true, matched: false },
+//     { id: 7, contents: "London", visible: true, matched: false },
+//     { id: 8, contents: "Berlin", visible: true, matched: false },
+//     { id: 9, contents: "Berlin", visible: true, matched: false },
+//     { id: 10, contents: "Tokio", visible: true, matched: false },
+//     { id: 11, contents: "Tokio", visible: true, matched: false },
+//   ],
+// };
+
+const initialState =  [
+    { id: 0, contents: "Amsterdam", visible: true, matched: false },
+    { id: 1, contents: "Amsterdam", visible: true, matched: false },
+    { id: 2, contents: "Paris", visible: true, matched: false },
+    { id: 3, contents: "Paris", visible: true, matched: false },
+    { id: 4, contents: "New York", visible: true, matched: false },
+    { id: 5, contents: "New York", visible: true, matched: false },
+    { id: 6, contents: "London", visible: true, matched: false },
+    { id: 7, contents: "London", visible: true, matched: false },
+    { id: 8, contents: "Berlin", visible: true, matched: false },
+    { id: 9, contents: "Berlin", visible: true, matched: false },
+    { id: 10, contents: "Tokio", visible: true, matched: false },
+    { id: 11, contents: "Tokio", visible: true, matched: false },
+  ];
 
 export const boardReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -29,7 +47,7 @@ export const boardReducer = (state = initialState, action) => {
     case "board/flipCard":
       let flipState = [...state];
       const cardID = action.payload;
-      flipState[cardID] = { ...state[cardID], visible: true};
+      flipState[cardID] = { ...state[cardID], visible: true };
 
       const [index1, index2] = flipState
         .filter((card) => card.visible)
@@ -40,12 +58,10 @@ export const boardReducer = (state = initialState, action) => {
         if (card1.contents === card2.contents) {
           flipState[index1] = { ...card1, visible: true, matched: true };
           flipState[index2] = { ...card2, visible: true, matched: true };
-      
         }
-       
       }
-  return flipState;
-     
+      return flipState;
+
     case "board/resetCards":
       return state.map((card) => ({ ...card, visible: false }));
     default:
@@ -97,7 +113,7 @@ export const flipCard = (id) => {
   };
 };
 
-export const resetCards = (indices) => {
+export const resetCards = () => {
   return {
     type: "board/resetCards",
   };
@@ -111,13 +127,13 @@ export const selectVisibleIds = (state) => {
   return state.board.filter((card) => card.visible).map((card) => card.id);
 };
 
-
 //returns array of matched cards
 export const selectMatchId = (state) => {
   return state.board.filter((card) => card.matched).map((card) => card.id);
-   
 };
 
 export const showMatchId = (state) => {
-  return state.board.filter((card) => card.matched).map((card) => ({ ...card, visible: true}));
+  return state.board
+    .filter((card) => card.matched)
+    .map((card) => ({ ...card, visible: true }));
 };
