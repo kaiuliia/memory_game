@@ -57,13 +57,13 @@ export const boardReducer = (state = initialState, action) => {
   }
 };
 
-// export const wonReducer = (state = wonState, action) => {
-// switch (action.type) {
-//   case "game/showBoard":
-//     return 
-//     ;
-// }
-// }
+export const wonReducer = (state = wonState, action) => {
+switch (action.type) {
+  case "game/showBoard":
+    return 
+    ;
+}
+}
 
 const wordPairs = [
   "Amsterdam",
