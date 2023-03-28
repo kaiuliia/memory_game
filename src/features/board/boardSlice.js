@@ -153,10 +153,11 @@ export const showMatchId = (state) => {
 };
 
 export const wonChecked = (state) => {
-    if (state.board.board.filter((card) => card.matched === true) == true) {
-  return state.won=true
+    if (state.board.board
+        .forEach(element=>element.matched==true)) {
+  return state.board.won=true
     } else {
-        return state.won=false
+        return state.board.won=false
     }
     
 
