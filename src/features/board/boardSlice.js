@@ -123,6 +123,9 @@ export const resetCards = () => {
   };
 };
 
+
+//selectors
+
 export const selectBoard = (state) => {
   return state.board.board.map((card) => ({
     id: card.id,
@@ -148,3 +151,14 @@ export const showMatchId = (state) => {
     .filter((card) => card.matched)
     .map((card) => ({ ...card, visible: true }));
 };
+
+export const wonChecked = (state) => {
+    if (state.board.board.filter((card) => card.matched === true) == true) {
+  return state.won=true
+    } else {
+        return state.won=false
+    }
+    
+
+
+}
