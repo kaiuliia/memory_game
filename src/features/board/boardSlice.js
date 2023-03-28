@@ -123,7 +123,6 @@ export const resetCards = () => {
   };
 };
 
-
 //selectors
 
 export const selectBoard = (state) => {
@@ -153,13 +152,8 @@ export const showMatchId = (state) => {
 };
 
 export const wonChecked = (state) => {
-    if (state.board.board
-        .forEach(element=>element.matched==true)) {
-  return state.board.won=true
-    } else {
-        return state.board.won=false
-    }
-    
-
-
-}
+  if (state.board.board
+    .some((element) => element.matched == false)) {
+ return false
+  } else {return true}
+};
