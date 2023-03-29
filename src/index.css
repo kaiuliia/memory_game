@@ -2,7 +2,6 @@
 
 html,
 body {
-
   margin: 0;
 }
 
@@ -12,14 +11,14 @@ body {
 }
 
 .App {
-/* display: flex;
+  /* display: flex;
  justify-content: center; */
 }
 .board {
-  display:flex;
+  display: flex;
   /* width:50%; */
 
- /* margin: 30px; */
+  /* margin: 30px; */
   justify-content: center;
   flex-wrap: wrap;
   /* position: inherit; */
@@ -34,7 +33,6 @@ body {
   cursor: pointer;
   height: 75px;
   font-size: 16px;
- 
 }
 
 .card:hover,
@@ -108,27 +106,25 @@ body {
   background-color: #7d1aff;
 }
 
-
 /* Mobile */
 @media screen and (max-width: 600px) {
   .board {
-  display:flex;
-  /* width:50%; */
+    display: flex;
+    /* width:50%; */
 
- /* margin: 30px; */
-  justify-content: center;
-  flex-wrap: wrap;
-  /* position: inherit; */
-}
+    /* margin: 30px; */
+    justify-content: center;
+    flex-wrap: wrap;
+    /* position: inherit; */
+  }
 
-.cards-container {
-
-
-  grid-template-columns: repeat(3, 110px);
-  grid-auto-rows: 1fr;
-  gap: 10px 10px;
-
-
-
-}
+  .cards-container {
+    grid-template-columns: repeat(3, 100px);
+    grid-auto-rows: 1fr;
+    gap: 10px 10px;
+  }
+  .card {
+    height: 60px;
+    font-size: 13px;
+  }
 }
