@@ -85,7 +85,6 @@ const randomWords = () => {
     words.push(newWordPairs[wordIndex]);
     newWordPairs.splice(wordIndex, 1);
   }
-
   return words;
 };
 

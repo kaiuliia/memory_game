@@ -5,7 +5,6 @@ import {
   flipCard,
   selectMatchId,
   resetCards,
-  showMatchId,
 } from "../../boardSlice";
 
 export const Card = ({ id, contents }) => {
@@ -30,15 +29,10 @@ export const Card = ({ id, contents }) => {
     cardText = contents;
     click = () => {};
   }
-  //  if (matchedId.length>2) {
-  // dispatch(showMatchId())
-  //  }
   if (visibleId.length === 2) {
     setTimeout(() => {
       dispatch(resetCards());
     }, "1000");
-
-    // click = () => {};
   }
 
   return (
