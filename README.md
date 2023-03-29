@@ -1,11 +1,10 @@
-
-
-
-
-
 # Getting Started with Memory Game
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The project is built using React and Redux.
+This is a memory game. Click "Start Game" button and cards will be randomly mixed.
+To win you need to find all pairs with the same city. Good luck!
+
+You can play here [here](https://memory.rusanova.eu).
 
 ## Available Scripts
 
