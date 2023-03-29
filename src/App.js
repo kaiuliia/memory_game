@@ -12,27 +12,35 @@ const App = () => {
     dispatch(setBoard());
   };
 
- const wonCheck = useSelector(wonChecked);
+  const wonCheck = useSelector(wonChecked);
 
-let p;
-if (wonCheck==true){
-  p='won!'
-}
+  let wonPhrase = "Congratulations, you won!";
 
-return (
-  <div className="App">
-    <Score />
-    <Board />
-    <footer className="footer">
-      <button onClick={startGameHandler} className="start-button">
-        Start Game
-      </button>
-      <p>{p}</p>
-    </footer>
-  </div>
-);
-
-  
+  if (wonCheck == true) {
+    return (
+      <div className="App">
+        <div className="score-container">
+          <p>{wonPhrase}</p>
+        </div>
+        <footer className="footer">
+          <button onClick={startGameHandler} className="start-button">
+            Start Again
+          </button>
+        </footer>
+      </div>
+    );
+  } else
+    return (
+      <div className="App">
+        <Score />
+        <Board />
+        <footer className="footer">
+          <button onClick={startGameHandler} className="start-button">
+            Start Game
+          </button>
+        </footer>
+      </div>
+    );
 };
 
 export default App;
