@@ -12,15 +12,13 @@ body {
 }
 
 .App {
-
- padding-top: 5rem;
+  padding-top: 5rem;
 }
 .board {
   display: flex;
 
   justify-content: center;
   flex-wrap: wrap;
-
 }
 .card {
   padding: 20px 0;
@@ -40,14 +38,10 @@ body {
 }
 
 .cards-container {
-
   display: grid;
   grid-template-columns: repeat(3, 138px);
   grid-auto-rows: 1fr;
   gap: 16px 16px;
-
-
-
 }
 
 .card.selected {
@@ -74,21 +68,20 @@ body {
   text-align: center;
   font-size: 32px;
 }
-.footer {
-  /* display: flex */
-}
+
 .footer > button {
   width: 20%;
+  height: 60px;
+
   /* padding: 19px 40px 19px 40px; */
   font-size: 20px;
   border: none;
   color: #ffffff;
   cursor: pointer;
-
 }
 
 .start-button {
-  background-color: #23164e;
+  background-color: #017193;
   border-radius: 6px;
 }
 
@@ -109,7 +102,7 @@ body {
 /* Mobile */
 @media screen and (max-width: 600px) {
   .App {
-padding-top: 5rem;
+    padding-top: 5rem;
   }
   .board {
     display: flex;
@@ -131,11 +124,9 @@ padding-top: 5rem;
     font-size: 13px;
   }
   .footer > button {
-  width: 30%;
-  height: 40px;
+    width: 30%;
+    height: 40px;
 
-  font-size: 13px;
- 
-
-}
+    font-size: 13px;
+  }
 }
