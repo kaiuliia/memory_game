@@ -33,9 +33,11 @@ const App = () => {
     return (
       <div className="App">
         <Score />
+        <br></br>
         <div className="board">
           <Board />
         </div>
+        <br></br>
         <footer className="footer">
           <button onClick={startGameHandler} className="start-button">
             Start Game
