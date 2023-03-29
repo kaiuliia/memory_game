@@ -1,18 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@700&display=swap");
 
-
 html,
 body {
   margin: 0;
- 
+  background-color: #f2f2f2;
 }
 
 * {
   font-family: "Oxygen", sans-serif;
   font-weight: bold;
-  
 }
 
+.App {
+  padding-top: 5rem;
+}
+.board {
+  display: flex;
+
+  justify-content: center;
+  flex-wrap: wrap;
+}
 .card {
   padding: 20px 0;
   text-align: center;
@@ -23,7 +30,6 @@ body {
   cursor: pointer;
   height: 75px;
   font-size: 16px;
-
 }
 
 .card:hover,
@@ -36,9 +42,6 @@ body {
   grid-template-columns: repeat(3, 138px);
   grid-auto-rows: 1fr;
   gap: 16px 16px;
-  margin: 0 auto;
-  width: fit-content;
-  padding: 24px 0 33px 0;
 }
 
 .card.selected {
@@ -61,14 +64,16 @@ body {
 
 .score-container {
   background-color: #f2f2f2;
-  padding: 18px 158px 23px 159px;
+  /* padding: 18px 158px 23px 159px; */
   text-align: center;
   font-size: 32px;
 }
 
 .footer > button {
   width: 20%;
-  padding: 19px 40px 19px 40px;
+  height: 60px;
+
+  /* padding: 19px 40px 19px 40px; */
   font-size: 20px;
   border: none;
   color: #ffffff;
@@ -76,9 +81,8 @@ body {
 }
 
 .start-button {
-  background-color: #23164e;
+  background-color: #017193;
   border-radius: 6px;
-  
 }
 
 .start-button:hover,
@@ -93,4 +97,36 @@ body {
 .try-new-pair-button:hover,
 .try-new-pair-button:focus {
   background-color: #7d1aff;
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .App {
+    padding-top: 5rem;
+  }
+  .board {
+    display: flex;
+    /* width:50%; */
+
+    /* margin: 30px; */
+    justify-content: center;
+    flex-wrap: wrap;
+    /* position: inherit; */
+  }
+
+  .cards-container {
+    grid-template-columns: repeat(3, 100px);
+    grid-auto-rows: 1fr;
+    gap: 10px 10px;
+  }
+  .card {
+    height: 60px;
+    font-size: 13px;
+  }
+  .footer > button {
+    width: 30%;
+    height: 40px;
+
+    font-size: 13px;
+  }
 }
