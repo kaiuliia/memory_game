@@ -1,21 +1,19 @@
+const initialState = [
+  { id: 0, contents: "Amsterdam", visible: true, matched: false },
+  { id: 1, contents: "Amsterdam", visible: true, matched: false },
+  { id: 2, contents: "Paris", visible: true, matched: false },
+  { id: 3, contents: "Paris", visible: true, matched: false },
+  { id: 4, contents: "New York", visible: true, matched: false },
+  { id: 5, contents: "New York", visible: true, matched: false },
+  { id: 6, contents: "London", visible: true, matched: false },
+  { id: 7, contents: "London", visible: true, matched: false },
+  { id: 8, contents: "Berlin", visible: true, matched: false },
+  { id: 9, contents: "Berlin", visible: true, matched: false },
+  { id: 10, contents: "Tokio", visible: true, matched: false },
+  { id: 11, contents: "Tokio", visible: true, matched: false },
+];
 
-
-const initialState =  [
-    { id: 0, contents: "Amsterdam", visible: true, matched: false },
-    { id: 1, contents: "Amsterdam", visible: true, matched: false },
-    { id: 2, contents: "Paris", visible: true, matched: false },
-    { id: 3, contents: "Paris", visible: true, matched: false },
-    { id: 4, contents: "New York", visible: true, matched: false },
-    { id: 5, contents: "New York", visible: true, matched: false },
-    { id: 6, contents: "London", visible: true, matched: false },
-    { id: 7, contents: "London", visible: true, matched: false },
-    { id: 8, contents: "Berlin", visible: true, matched: false },
-    { id: 9, contents: "Berlin", visible: true, matched: false },
-    { id: 10, contents: "Tokio", visible: true, matched: false },
-    { id: 11, contents: "Tokio", visible: true, matched: false },
-  ];
-
-  const wonState = false;
+const wonState = false;
 
 export const boardReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -49,8 +47,7 @@ export const boardReducer = (state = initialState, action) => {
       return flipState;
 
     case "board/resetCards":
-      return  state.map((card) => ({ ...card, visible: false }))
-;
+      return state.map((card) => ({ ...card, visible: false }));
 
     default:
       return state;
@@ -58,12 +55,11 @@ export const boardReducer = (state = initialState, action) => {
 };
 
 export const wonReducer = (state = wonState, action) => {
-switch (action.type) {
-  case "game/showBoard":
-    return 
-    ;
-}
-}
+  switch (action.type) {
+    case "game/showBoard":
+      return;
+  }
+};
 
 const wordPairs = [
   "Amsterdam",
@@ -125,16 +121,12 @@ export const selectBoard = (state) => {
 };
 
 export const selectVisibleIds = (state) => {
-  return state.board
-    .filter((card) => card.visible)
-    .map((card) => card.id);
+  return state.board.filter((card) => card.visible).map((card) => card.id);
 };
 
 //returns array of matched cards
 export const selectMatchId = (state) => {
-  return state.board
-    .filter((card) => card.matched)
-    .map((card) => card.id);
+  return state.board.filter((card) => card.matched).map((card) => card.id);
 };
 
 export const showMatchId = (state) => {
@@ -144,8 +136,9 @@ export const showMatchId = (state) => {
 };
 
 export const wonChecked = (state) => {
-  if (state.board.board
-    .some((element) => element.matched == false)) {
- return false
-  } else {return true}
+  if (state.board.some((element) => element.matched == false)) {
+    return false;
+  } else {
+    return true;
+  }
 };
