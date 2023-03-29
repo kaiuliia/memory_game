@@ -33,7 +33,9 @@ const App = () => {
     return (
       <div className="App">
         <Score />
-        <Board />
+        <div className="board">
+          <Board />
+        </div>
         <footer className="footer">
           <button onClick={startGameHandler} className="start-button">
             Start Game
